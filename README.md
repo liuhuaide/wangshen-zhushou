@@ -38,7 +38,7 @@ cp templates/rules.template.md     my-data/rules.md
 cp "templates/投递记录.template.csv" "my-data/投递记录.csv"
 ```
 
-1. 填写 `my-data/profile.json`（不会填的留 `null`，AI 遇到时会问你）。也可以直接把简历发给 AI，让它帮你初始化 profile。
+1. **最省事的做法**：直接对 AI 说「第一次用网申助手，帮我建资料库」，然后把简历和证件照发给它。AI 会先从简历预填，再按分区（基本信息 → 求职意向 → 教育 → …）逐轮问你补充，随时可以说「跳过」。也可以自己手动填写 `my-data/profile.json`，不会填的留 `null`。
 2. 在 `my-data/rules.md` 写你的偏好。
 3. 把简历（PDF，最好再附上 Word / HTML 源文件方便修改）和证件照放进 `my-data/附件/`。也可以直接把它们发给 AI，让它帮你保存、登记，并用简历初始化 profile。
 4. 按你用的 AI 看对应说明：[Claude](adapters/claude.md) ｜ [ChatGPT](adapters/chatgpt.md) ｜ [豆包 / Grok / 其他](adapters/others.md)
