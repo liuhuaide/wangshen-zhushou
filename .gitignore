@@ -1,0 +1,7 @@
+# 个人资料，永远不要提交
+my-data/
+*.pdf
+*.jpg
+*.png
+!docs/*.png
+.DS_Store
