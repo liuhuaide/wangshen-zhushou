@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>简历模板</title>
+<style>
+@page{size:A4;margin:0}
+/* 使用：替换下方【】内的占位内容；照片放同目录 photo.jpg；浏览器打印→另存为 PDF（A4、边距无、勾选背景图形） */
+:root{--navy:#1F3A5F;--accent:#2E6DA4;--grey:#666;--line:#d5dbe3}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;font-size:9pt;line-height:1.4;color:#222;background:#fff}
+.page{width:210mm;height:297mm;padding:0 13mm 6mm;position:relative}
+.topbar{height:4mm;background:var(--navy);margin:0 -13mm 5mm}
+header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1mm}
+h1{font-size:22pt;letter-spacing:4px;color:var(--navy);line-height:1.15;margin-bottom:1.5mm}
+.info{color:#444;font-size:9pt;line-height:1.7}
+.info .sep{color:#bbb;margin:0 6px}
+.info b{color:var(--navy);font-weight:600}
+.photo{width:25mm;height:33.2mm;object-fit:cover;border:1px solid var(--line);padding:1.2mm;background:#fff}
+section{margin-top:2.6mm}
+h2{display:flex;align-items:center;font-size:11.5pt;color:var(--navy);margin-bottom:1.6mm;letter-spacing:1px}
+h2::before{content:"";width:3.5px;height:13px;background:var(--accent);margin-right:7px;border-radius:1px}
+h2::after{content:"";flex:1;height:1px;background:var(--line);margin-left:10px}
+.row{display:flex;justify-content:space-between;align-items:baseline;margin-top:1mm}
+.row .t{font-weight:700;font-size:10pt;color:#111}
+.tag{display:inline-block;font-size:8.2pt;font-weight:400;color:var(--accent);background:#EAF1F8;border-radius:2px;padding:0 5px;margin-left:8px;line-height:1.6;vertical-align:1px}
+.sub{color:var(--grey);font-weight:400;font-size:9pt;margin-left:8px}
+.date{color:#555;font-size:9pt;white-space:nowrap;font-variant-numeric:tabular-nums}
+ul{list-style:none;margin-top:.4mm}
+li{position:relative;padding-left:11px;text-align:justify}
+li::before{content:"";position:absolute;left:2px;top:.62em;width:4px;height:4px;border-radius:50%;background:var(--accent)}
+p.d{text-align:justify}
+.link{color:var(--accent);font-size:8.4pt;white-space:nowrap;margin-left:4px}
+.skills{display:grid;grid-template-columns:21mm 1fr;row-gap:.6mm;margin-top:.6mm}
+.skills .k{font-weight:700;color:var(--navy)}
+li.l{text-align:left}.photo{float:right;margin:0 0 -3mm 5mm}h2.noline::after{display:none}h2.noline{display:block}h2.noline::before{display:inline-block;vertical-align:-1px}header+section{clear:both}.photo-ph{width:25mm;height:33.2mm;border:1px dashed var(--line);float:right;margin:0 0 -3mm 5mm;display:flex;align-items:center;justify-content:center;text-align:center;color:#aaa;font-size:8pt}
+</style></head>
+<body><div class="page">
+<div class="topbar"></div>
+<img class="photo" src="photo.jpg" alt="证件照" onerror="this.outerHTML='<div class=&quot;photo-ph&quot;>证件照<br>photo.jpg</div>'">
+<header>
+ <div>
+  <h1>【姓名】</h1>
+  <div class="info">【性别】<span class="sep">|</span>【年龄】<span class="sep">|</span>【手机】<span class="sep">|</span>【邮箱】<span class="sep">|</span>【个人主页 / GitHub】</div>
+  <div class="info">求职意向：<b>【目标岗位】</b><span class="sep">|</span>【一句亮点，如：X 年 XX 经验】<span class="sep">|</span>【最高学历 + 学校】</div>
+ </div>
+</header>
+
+<section><h2 class="noline">个人总结</h2>
+<p class="d">【3–5 句：你是谁（专业/年限）→ 做过什么、取得了什么 → 擅长什么 → 想做什么岗位。所有内容必须真实。】</p>
+</section>
+
+<section><h2>工作 / 实习经历</h2>
+<div class="row"><div><span class="t">【公司名称】</span><span class="tag">【职位】</span></div><span class="date">【YYYY.MM – YYYY.MM】</span></div>
+<ul>
+<li>【动作 + 方法 + 结果：负责……，通过……，使……提升约 X%。】</li>
+<li>【第二条要点】</li>
+<li>【第三条要点】</li>
+</ul>
+<div class="row"><div><span class="t">【公司名称】</span><span class="tag">【职位】</span></div><span class="date">【YYYY.MM – YYYY.MM】</span></div>
+<ul>
+<li>【要点】</li>
+<li>【要点】</li>
+</ul>
+</section>
+
+<section><h2>项目经历</h2>
+<div class="row"><div><span class="t">【项目名称】</span><span class="tag">【角色 / 技术 / 是否开源】</span></div><span class="date">【YYYY.MM – YYYY.MM】</span></div>
+<ul>
+<li>【做了什么、怎么做、结果如何】</li>
+<li class="l">【第二条要点】<span class="link">【项目链接（可选）】</span></li>
+</ul>
+<div class="row"><div><span class="t">【项目名称】</span><span class="tag">【角色】</span></div><span class="date">【YYYY.MM – YYYY.MM】</span></div>
+<ul>
+<li>【要点】</li>
+</ul>
+</section>
+
+<section><h2>教育经历</h2>
+<div class="row"><div><span class="t">【学校名称】</span><span class="tag">【学历】</span><span class="sub">【专业】</span></div><span class="date">【YYYY.MM – YYYY.MM】</span></div>
+<p class="d">【成绩 / 排名 / 核心课程（可选）】</p>
+<div class="row"><div><span class="t">【学校名称】</span><span class="tag">【学历】</span><span class="sub">【专业】</span></div><span class="date">【YYYY.MM – YYYY.MM】</span></div>
+</section>
+
+<section><h2>专业技能</h2>
+<div class="skills">
+<span class="k">【类别一】</span><span>【技能，按岗位相关度排序】</span>
+<span class="k">【类别二】</span><span>【技能】</span>
+<span class="k">【类别三】</span><span>【技能】</span>
+<span class="k">语言</span><span>【如：英语 —— CET-6 / 雅思 X.X】</span>
+</div>
+</section>
+</div></body></html>

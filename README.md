@@ -14,6 +14,7 @@
 - 🧠 **越用越聪明**：网站问到资料库没有的信息，只问你一次，写回后下次直接用；新的字段叫法也会记进别名表
 - 🔁 **自动修正旧数据**：很多网站会保留你以前填的旧简历，AI 会逐项核对并改成最新版本
 - 📊 **自动记录投递**：填完即记入 `投递记录.csv`（公司、公司类型、岗位、城市、链接、状态……），Excel 直接打开
+- 📝 **按岗位定制简历**：在你自己的简历基础上调整求职意向、总结和重点（只调整不编造），另存为新版本，不覆盖原件；没有简历也可以用自带模板生成
 - ⚙️ **自定义规则**：在 `rules.md` 里用大白话写规则，例如「是否有本公司亲属一律填没有」「期望城市优先深圳」
 
 ## 安全设计
@@ -39,7 +40,7 @@ cp "templates/投递记录.template.csv" "my-data/投递记录.csv"
 
 1. 填写 `my-data/profile.json`（不会填的留 `null`，AI 遇到时会问你）。也可以直接把简历发给 AI，让它帮你初始化 profile。
 2. 在 `my-data/rules.md` 写你的偏好。
-3. 把简历 PDF、证件照放进 `my-data/附件/`。
+3. 把简历（PDF，最好再附上 Word / HTML 源文件方便修改）和证件照放进 `my-data/附件/`。也可以直接把它们发给 AI，让它帮你保存、登记，并用简历初始化 profile。
 4. 按你用的 AI 看对应说明：[Claude](adapters/claude.md) ｜ [ChatGPT](adapters/chatgpt.md) ｜ [豆包 / Grok / 其他](adapters/others.md)
 5. 打开并登录网申页面，对 AI 说：**「帮我填这个网申：<链接>」**
 
@@ -64,10 +65,19 @@ wangshen-zhushou/
 │   ├── profile.template.json
 │   ├── answers.template.md
 │   ├── rules.template.md
-│   └── 投递记录.template.csv
+│   ├── 投递记录.template.csv
+│   └── 简历模板.html        # 单页 A4 简历模板（带照片位）
 ├── adapters/                # 各平台使用说明
 └── my-data/                 # 你的个人资料（自己创建，不会上传）
+    ├── profile.json / answers.md / rules.md / 投递记录.csv
+    └── 附件/                # 简历各版本、证件照、成绩单
 ```
+
+## 简历与照片
+
+- 放在 `my-data/附件/`，在 `profile.json → 附件` 里登记；可以按岗位类别准备多版（如 `简历_数据分析.pdf`、`简历_产品运营.pdf`），AI 会按岗位自动选用。
+- 让 AI「帮我针对这个岗位改一版简历」：它会以你的简历为底稿，只调整措辞、顺序和重点，先列出改动让你确认，再另存为新文件。
+- 没有现成简历：用 `templates/简历模板.html`，让 AI 按 profile 填好后，用浏览器「打印 → 另存为 PDF」导出。
 
 ## 投递记录表
 
